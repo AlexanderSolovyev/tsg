@@ -1,6 +1,6 @@
 class NewsController < ApplicationController
   def index
-    @news=New.all
+    @news=New.all.reverse
   end
   def edit 
     @new=New.find(params[:id])
