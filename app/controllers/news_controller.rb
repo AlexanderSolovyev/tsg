@@ -10,6 +10,18 @@ class NewsController < ApplicationController
     new.update!(new_params)
     redirect_to news_index_path
   end
+  def new
+    @new= New.new
+  end
+  def create
+    New.create(new_params)
+    redirect_to news_index_path
+  end
+  def destroy
+    new=New.find(params[:id])
+    new.destroy
+    redirect_to news_index_path
+  end
 
    private
    def new_params
