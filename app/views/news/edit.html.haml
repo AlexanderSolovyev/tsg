@@ -1,0 +1,19 @@
+= render 'navbar' 
+.container
+  .row
+    .col-md-6
+      .panel.panel-success
+        .panel-heading
+          Редактируем сообщение
+        .panel-body
+          = form_for @new, url: {action: 'update'} do |f| 
+            .form-group
+              %label Заголовок
+              %br
+              = f.text_field :title 
+            .form-group
+              %label Сообщение
+              %br 
+              = f.text_area :description, size: '60x12'
+            .form-group
+              = f.submit
