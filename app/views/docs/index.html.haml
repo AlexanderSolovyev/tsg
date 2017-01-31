@@ -1,0 +1,12 @@
+= render 'news/navbar'
+.container
+  .row
+    .col-md-8
+      %table.table
+        %tr.info
+          %td Документы
+          %td
+        %tr
+          %td Свидетельство о регистрации юридического лица
+          %td 
+            = link_to content_tag('span','',class: 'glyphicon glyphicon-zoom-in'), 'app/views/info/svidetelstvo_o_registracii.pdf'

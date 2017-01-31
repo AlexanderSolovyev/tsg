@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'news#index'
   resources :news
   resources :info, only: [:index]
+  resources :docs, only: [:index]
 end
