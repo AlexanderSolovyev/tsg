@@ -1,13 +1,27 @@
 = render 'navbar' 
 .container
-  .panel.panel-default
-    %p
-      = link_to content_tag('span','', class: 'glyphicon glyphicon-plus'), new_news_path 
-    - @news.each do |new| 
-      = link_to content_tag('span','',class: 'glyphicon glyphicon-pencil'), edit_news_path(new) 
-      = link_to content_tag('span','',class: 'glyphicon glyphicon-remove'), new, method: :delete, data: { confirm: 'Are you sure ?' } 
-      %h3.text-center 
-        = new.title
-      %p.text-center
-        = new.description 
-      %hr
+  .col-md-8
+    .panel.panel-default
+      %p
+        = link_to content_tag('span','', class: 'glyphicon glyphicon-plus'), new_news_path 
+      - @news.each do |new| 
+        = link_to content_tag('span','',class: 'glyphicon glyphicon-pencil'), edit_news_path(new) 
+        = link_to content_tag('span','',class: 'glyphicon glyphicon-remove'), new, method: :delete, data: { confirm: 'Are you sure ?' } 
+        %h3.text-center 
+          = new.title
+        %p.text-center
+          = new.description 
+        %hr
+  .col-md-4
+    %table.table
+      %tr.success
+        %td Режим работы
+      %tr
+        %td Пн-Пт 19.00-21.00
+      %tr
+        %td Cб, Вск Выходной
+      %tr.success
+        %td Телефон
+      %tr
+        %td 8-910-530-87-21
+= render 'footer'
