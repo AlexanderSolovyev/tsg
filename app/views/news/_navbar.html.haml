@@ -11,7 +11,13 @@
 .container
   .navbar.navbar-default
     .navbar-header
-    .collapse.navbar-collapse
+      %button{:type => 'button', :class => 'navbar-toggle', :data => {:toggle  => 'collapse', :target => '#menu' }}
+        %span.sr-only
+          Открыть навигацию
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .collapse.navbar-collapse#menu
       %ul.nav.navbar-nav
         %li 
           = link_to content_tag('span',' Новости и обьявления',class: 'glyphicon glyphicon-comment'), news_index_path
