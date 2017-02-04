@@ -1,0 +1,4 @@
+=render 'news/navbar'
+= form_for @doc, url: {action: 'update'} do |f|
+  = f.text_field :title
+  = f.submit

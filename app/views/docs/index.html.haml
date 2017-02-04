@@ -6,7 +6,12 @@
         %tr.info
           %td Документы
           %td
-        %tr
-          %td Свидетельство о регистрации юридического лица
-          %td 
-            = link_to content_tag('span','',class: 'glyphicon glyphicon-zoom-in'), 'app/views/info/svidetelstvo_o_registracii.pdf'
+        - @docs.each do |doc|
+          %tr
+            %td 
+              = doc.title
+            %td 
+              = link_to 'edit', edit_doc_path(doc)
+              = link_to 'destroy',doc, method: :delete, data: {confirm: 'Are you sure?'} 
+=link_to 'new', new_doc_path
+= render 'news/footer'
