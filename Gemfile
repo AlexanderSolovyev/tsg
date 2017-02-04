@@ -17,6 +17,7 @@ end
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'letter_opener'
 end
 
 group :development do
@@ -32,3 +33,4 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem "haml-rails"
 gem 'paperclip'
 gem 'simple_form'
+gem 'devise'

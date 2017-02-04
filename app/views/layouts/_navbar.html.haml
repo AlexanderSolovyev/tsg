@@ -26,6 +26,9 @@
     .collapse.navbar-collapse.navbar-right
       %ul.nav.navbar-nav
         %li 
-          = link_to 'Войти', news_index_path
+          - if user_signed_in?
+            = link_to 'Выйти', destroy_user_session_path, method: :delete
+          -  else
+            = link_to 'Войти', new_user_session_path
         %li 
-          = link_to 'Зарегистрироваться', news_index_path
+          = link_to 'Зарегистрироваться', new_user_registration_path unless user_signed_in?

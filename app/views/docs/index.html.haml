@@ -12,7 +12,8 @@
             %td 
               .text-right
                 = link_to content_tag('span','',class: 'glyphicon glyphicon-search'), doc.document.url
-                = link_to content_tag('span','', class: 'glyphicon glyphicon-pencil'), edit_doc_path(doc)
-                = link_to content_tag('span','', class: 'glyphicon glyphicon-remove'),doc, method: :delete, data: {confirm: 'Are you sure?'} 
+                -if user_signed_in? and current_user.admin 
+                  = link_to content_tag('span','', class: 'glyphicon glyphicon-pencil'), edit_doc_path(doc)
+                  = link_to content_tag('span','', class: 'glyphicon glyphicon-remove'),doc, method: :delete, data: {confirm: 'Are you sure?'} 
       =link_to content_tag('span','', class: 'glyphicon glyphicon-plus'), new_doc_path
     =render './layouts/time'  

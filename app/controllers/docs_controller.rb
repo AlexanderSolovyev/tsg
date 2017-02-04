@@ -1,4 +1,5 @@
 class DocsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :doc_find, only: [:edit, :update, :destroy]
   def index
     @docs=Doc.all

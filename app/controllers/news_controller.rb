@@ -1,4 +1,5 @@
 class NewsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :new_find, only: [:edit, :update, :destroy]
   def index
     @news=New.all.order(created_at: :desc)
@@ -20,7 +21,6 @@ class NewsController < ApplicationController
     @new.destroy
     redirect_to news_index_path
   end
-
    private
    def new_params
      params.require(:new).permit(:title, :description)
