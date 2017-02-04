@@ -1,4 +1,3 @@
-= render 'navbar' 
 .container
   .row
     .col-md-6
@@ -6,14 +5,7 @@
         .panel-heading
           Редактируем сообщение
         .panel-body
-          = form_for @new, url: {action: 'update'} do |f| 
-            .form-group
-              %label Заголовок
-              %br
-              = f.text_field :title 
-            .form-group
-              %label Сообщение
-              %br 
-              = f.text_area :description, size: '60x12'
-            .form-group
-              = f.submit('Обновить')
+          = simple_form_for @new, url: {action: 'update'} do |f| 
+            = f.input :title, label: 'Заголовок' 
+            = f.input :description, as: :text
+            = f.button :submit, 'Обновить'

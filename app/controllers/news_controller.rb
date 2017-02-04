@@ -1,13 +1,12 @@
 class NewsController < ApplicationController
+  before_action :new_find, only: [:edit, :update, :destroy]
   def index
-    @news=New.all.reverse
+    @news=New.all.order(created_at: :desc)
   end
   def edit 
-    @new=New.find(params[:id])
   end
   def update 
-    new= New.find(params[:id])
-    new.update!(new_params)
+    @new.update!(new_params)
     redirect_to news_index_path
   end
   def new
@@ -18,13 +17,15 @@ class NewsController < ApplicationController
     redirect_to news_index_path
   end
   def destroy
-    new=New.find(params[:id])
-    new.destroy
+    @new.destroy
     redirect_to news_index_path
   end
 
    private
    def new_params
      params.require(:new).permit(:title, :description)
+   end
+   def new_find
+    @new=New.find(params[:id])
    end
 end
