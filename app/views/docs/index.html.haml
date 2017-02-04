@@ -11,7 +11,8 @@
             %td 
               = doc.title
             %td 
+              = link_to 'Download', doc.document.url
               = link_to 'edit', edit_doc_path(doc)
               = link_to 'destroy',doc, method: :delete, data: {confirm: 'Are you sure?'} 
-=link_to 'new', new_doc_path
+      =link_to 'new', new_doc_path
 = render 'news/footer'
