@@ -1,5 +1,12 @@
 =render 'news/navbar'
-= form_for @doc, url: {action: 'update'}, html: { multipart: true } do |f|
-  = f.text_field :title
-  = f.file_field :document
-  = f.submit
+.container
+  .row
+    .col-md-6
+      .panel.panel-success
+        .panel-heading
+          Редактируем документ 
+        .panel-body
+          = simple_form_for @doc, url: {action: 'update'}, html: { multipart: true } do |f|
+            = f.input :title, label: 'Название документа'
+            = f.input :document, as: :file, label: 'Загрузить pdf'
+            = f.button :submit, 'Обновить'
