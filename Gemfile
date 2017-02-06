@@ -34,3 +34,4 @@ gem "haml-rails"
 gem 'paperclip'
 gem 'simple_form'
 gem 'devise'
+gem 'rails-i18n'

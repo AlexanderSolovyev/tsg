@@ -8,13 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <div class='container-fluid'>
-    
-  </div>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= render './layouts/navbar' %>
     <%= yield %>
     <%= render './layouts/footer' %>
