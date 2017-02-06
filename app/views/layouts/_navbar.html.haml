@@ -1,7 +1,5 @@
 .alert.alert-danger
   Внимание! Тестовая версия! V1.2
-  = notice
-  = alert
 .panel.panel-default
   .bg-primary
     .panel-body
@@ -37,3 +35,7 @@
             = link_to 'Войти', new_user_session_path
           %li 
             = link_to 'Зарегистрироваться', new_user_registration_path
+- if notice.present? or alert.present?
+  .alert.alert-danger
+    = notice
+    = alert
