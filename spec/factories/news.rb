@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :news, class: 'New' do
-    
+  factory :new  do
+    title 'MyTitle'
+    description 'MyDescription'
   end
 end
