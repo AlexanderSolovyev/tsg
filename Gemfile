@@ -18,6 +18,8 @@ end
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'letter_opener'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
