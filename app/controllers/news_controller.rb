@@ -7,8 +7,11 @@ class NewsController < ApplicationController
   def edit 
   end
   def update 
-    @new.update!(new_params)
-    redirect_to news_index_path
+    if @new.update(new_params)
+      redirect_to news_index_path
+    else
+      render :edit
+    end
   end
   def new
     @new= New.new
