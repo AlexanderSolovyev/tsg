@@ -19,7 +19,8 @@ RSpec.describe NewsController, type: :controller do
     let(:user) {create(:user)}
     before do
       #Warden.test_mode!
-      login_as user, scope: :user
+      #login_as user, scope: :user
+      sign_in user
     end
 
     it 'assigns a new new to @new' do
