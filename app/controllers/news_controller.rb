@@ -14,8 +14,12 @@ class NewsController < ApplicationController
     @new= New.new
   end
   def create
-    New.create(new_params)
-    redirect_to news_index_path
+   @new= New.new(new_params)
+   if @new.save
+      redirect_to news_index_path
+   else
+     render :new
+   end
   end
   def destroy
     @new.destroy
