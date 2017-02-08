@@ -16,11 +16,18 @@ RSpec.describe NewsController, type: :controller do
     end
   end
   describe 'GET #new' do
-    before { get :new}
+    let(:user) {create(:user)}
+    before do
+      #Warden.test_mode!
+      login_as user, scope: :user
+    end
+
     it 'assigns a new new to @new' do
+      get :new
       expect(assigns(:new)).to be_a_new(New)
     end
     it 'render a new view' do
+      get :new
       expect(response).to render_template :new
     end
   end
