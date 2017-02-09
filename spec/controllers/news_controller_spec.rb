@@ -115,11 +115,26 @@ RSpec.describe NewsController, type: :controller do
         patch :update, params: {id:new, new: { title: '', description: '' }}
         expect(response).to render_template :edit
       end
-
     end
-                               
-      
+  end 
+
+
+  describe 'DELETE #desroy' do
+    let(:user) {create :user}
+    let(:new) {create :new}
+    before { sign_in user}
+
+    it ' destroy new' do
+      new
+      expect { delete :destroy, params: {id: new}}.to change(New, :count).by(-1)
+    end
+
+    it 'redirect to news' do
+      delete :destroy, params: {id: new}
+      expect(response).to redirect_to news_index_path
+    end
   end
+
 
 
 
