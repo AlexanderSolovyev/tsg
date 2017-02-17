@@ -36,6 +36,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "haml-rails"
 gem 'paperclip'
+gem "paperclip-dropbox", ">= 1.1.7"
 gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n'
