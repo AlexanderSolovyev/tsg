@@ -1,5 +1,6 @@
 class NewsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  before_action :auth_admin!, except: [:index]
   before_action :new_find, only: [:edit, :update, :destroy]
   def index
     @news=New.all.order(created_at: :desc)
@@ -34,5 +35,8 @@ class NewsController < ApplicationController
    end
    def new_find
     @new=New.find(params[:id])
+   end
+   def auth_admin!
+      redirect_to news_index_path unless user_signed_in? and current_user.admin 
    end
 end
