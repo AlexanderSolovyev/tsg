@@ -7,15 +7,22 @@ class NewsController < ApplicationController
   def edit 
   end
   def update 
-    @new.update!(new_params)
-    redirect_to news_index_path
+    if @new.update(new_params)
+      redirect_to news_index_path
+    else
+      render :edit
+    end
   end
   def new
     @new= New.new
   end
   def create
-    New.create(new_params)
-    redirect_to news_index_path
+   @new= New.new(new_params)
+   if @new.save
+      redirect_to news_index_path
+   else
+     render :new
+   end
   end
   def destroy
     @new.destroy

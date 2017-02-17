@@ -9,4 +9,9 @@ FactoryGirl.define do
     password_confirmation 'password'
     confirmed_at Time.now
   end
+  factory :invalid_new, class: 'New' do
+    title ''
+    description ''
+  end
+
 end
