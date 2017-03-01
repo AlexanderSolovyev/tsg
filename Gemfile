@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0.5'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 group :production do
@@ -41,3 +42,4 @@ gem 'simple_form'
 gem 'devise'
 gem 'rails-i18n'
 gem 'postmark-rails'
+gem 'activeadmin'
