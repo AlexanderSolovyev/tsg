@@ -17,5 +17,7 @@
             = new.title
         %p.text-center
           = new.description 
+        %p.text-right
+          = new.date.strftime('%d,%m,%Y')
         %hr
   = render './layouts/time'      

@@ -31,7 +31,7 @@ class NewsController < ApplicationController
   end
    private
    def new_params
-     params.require(:new).permit(:title, :description)
+     params.require(:new).permit(:title, :description, :date)
    end
    def new_find
     @new=New.find(params[:id])
