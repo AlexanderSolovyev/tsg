@@ -13,3 +13,10 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+  background: image-url('8400.jpg') no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  opacity: 0.9;
+  
+}
