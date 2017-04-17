@@ -6,6 +6,6 @@
           Написать председателю
         .panel-body
           = simple_form_for @user_request do |u|
-            =u.input :text
-            =u.button :submit
+            =u.input :text, as: :text, label: 'Сообщение'
+            =u.button :submit, 'Отправить письмо'
 
