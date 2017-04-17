@@ -1,0 +1,11 @@
+.container
+  .row
+    .col-md-6
+      .panel.panel-default
+        .panel-heading
+          Написать председателю
+        .panel-body
+          = simple_form_for @user_request do |u|
+            =u.input :text
+            =u.button :submit
+
