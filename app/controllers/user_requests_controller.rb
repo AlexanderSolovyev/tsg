@@ -7,6 +7,7 @@ class UserRequestsController < ApplicationController
   end
   def create
     @user_request=UserRequest.new(user_request_params)
+    @user_request.user=current_user
     @user_request.save
     redirect_to news_index_path
   end
