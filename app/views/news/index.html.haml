@@ -6,12 +6,7 @@
           %strong
             Информация для жильцов
     .panel.panel-default
-      -if user_signed_in? and current_user.admin 
-        = link_to content_tag('span','', class: 'glyphicon glyphicon-plus'), new_news_path
       - @news.each do |new| 
-        -if user_signed_in? and current_user.admin 
-          = link_to content_tag('span','',class: 'glyphicon glyphicon-pencil'), edit_news_path(new) 
-          = link_to content_tag('span','',class: 'glyphicon glyphicon-remove'), new, method: :delete, data: { confirm: 'Ты уверен ?' } 
         %h3.text-center 
           %strong
             = new.title
