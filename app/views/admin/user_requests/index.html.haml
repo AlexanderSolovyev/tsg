@@ -1,0 +1,18 @@
+.panel.panel-default
+  %table.table 
+    %tr.info
+      %td Дата
+      %td Пользователь
+      %td Сообщение
+      %td  
+        - @user_requests.each do |user_request|
+          %tr
+            %td 
+              =user_request.created_at
+            %td 
+              =user_request.user.email
+            %td 
+              =user_request.text
+            %td 
+              = link_to 'Удалить', admin_user_request_path(user_request), method: :delete, data: {confirm: 'Ты уверен ?'}
+

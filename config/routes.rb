@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :news
     resources :docs
+    resources :user_requests
   end
   resources :news, only: [:index]
   resources :info, only: [:index]
