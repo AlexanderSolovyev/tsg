@@ -1,4 +1,4 @@
-class Admin::NewsController < ApplicationController
+class Admin::NewsController < Admin::ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :auth_admin!, except: [:index]
   before_action :new_find, only: [:edit, :update, :destroy]
