@@ -5,7 +5,7 @@
         .panel-heading
           Создаем документ 
         .panel-body
-          = simple_form_for @doc, html: { multipart: true } do |f|
+          = simple_form_for @doc, url: {controller: 'admin/docs', action: 'create'}, html: { multipart: true } do |f|
             = f.input :title, label: 'Название'
             = f.input :document, as: :file, label: 'Загружаем pdf'
             = f.button :submit, 'Сохраняем'

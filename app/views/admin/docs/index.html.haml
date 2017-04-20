@@ -1,0 +1,27 @@
+.panel.panel-default
+  %table.table
+    %tr.info
+      %td Документ
+      %td Имя файла
+      %td Размер
+      %td Создан
+      %td Изменен
+      %td
+    - @docs.each do |doc|
+      %tr
+        %td 
+          = doc.title
+        %td
+          = doc.document_file_name
+        %td
+          = doc.document_file_size
+        %td 
+          = doc.created_at
+        %td
+          = doc.updated_at
+        %td
+          .text-right
+            = link_to content_tag('span','',class: 'glyphicon glyphicon-search'), doc.document.url
+            = link_to content_tag('span','', class: 'glyphicon glyphicon-pencil'), edit_admin_doc_path(doc)
+            = link_to content_tag('span','', class: 'glyphicon glyphicon-remove'),doc, method: :delete, data: {confirm: 'Ты уверен ?'} 
+=link_to 'Создать документ',new_admin_doc_path 

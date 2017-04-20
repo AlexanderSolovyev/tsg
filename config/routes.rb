@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'news#index'
   namespace :admin do
     resources :news
+    resources :docs
   end
   resources :news, only: [:index]
   resources :info, only: [:index]
