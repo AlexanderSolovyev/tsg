@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :news
     resources :docs
     resources :user_requests
+    resources :users
   end
   resources :news, only: [:index]
   resources :info, only: [:index]

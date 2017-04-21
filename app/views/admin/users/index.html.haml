@@ -1,0 +1,23 @@
+.panel.panel-default
+  %table.table 
+    %tr.info
+      %td Пользователь
+      %td заходил раз
+      %td Был замечен
+      %td Создан
+      %td Администратор
+      %td
+    - @users.each do |user|
+      %tr
+        %td
+          =user.email
+        %td
+          =user.sign_in_count
+        %td
+          =user.last_sign_in_at
+        %td
+          =user.created_at
+        %td
+          =user.admin
+        %td
+          =link_to 'Удалить', admin_user_path(user), method: :delete, data: { confirm: 'Ты уверен ?'}
