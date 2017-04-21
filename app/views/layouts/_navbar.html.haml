@@ -30,6 +30,9 @@
             = link_to current_user.email, destroy_user_session_path, method: :delete
           %li
             = link_to 'Выйти', destroy_user_session_path, method: :delete
+          - if current_user.admin 
+            %li
+              = link_to 'Админка', admin_news_index_path, method: :get
         - else
           %li
             = link_to 'Войти', new_user_session_path

@@ -1,6 +1,4 @@
 class Admin::DocsController < Admin::ApplicationController
-  before_action :authenticate_user!, except: [:index]
-  before_action :auth_admin!, except: [:index]
   before_action :doc_find, only: [:edit, :update, :destroy]
   def index
     @docs=Doc.all
@@ -29,7 +27,4 @@ class Admin::DocsController < Admin::ApplicationController
   def doc_find
     @doc=Doc.find(params[:id])
   end
-   def auth_admin!
-      redirect_to news_index_path unless user_signed_in? and current_user.admin 
-   end
 end
