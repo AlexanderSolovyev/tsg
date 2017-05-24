@@ -10,7 +10,9 @@
   </head>
 
   <body>
-    <%= render './layouts/admin/admin_navbar'%>
-    <%= yield %>
+    <div class='admin'>
+      <%= render './layouts/admin/admin_navbar'%>
+      <%= yield %>
+    </div>
   </body>
 </html>
